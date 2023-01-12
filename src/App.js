@@ -12,7 +12,10 @@ function App() {
     event.preventDefault();
     let inputValue = textRef.current.value;
     console.log(textRef, parseInt(inputValue), typeof parseInt(inputValue));
-    if (typeof parseInt(inputValue) === "number") {
+    if (
+      typeof parseInt(inputValue) === "number" &&
+      parseInt(inputValue).toString() !== "NaN"
+    ) {
       if (usDollar) {
         const parsedInt = parseInt(inputValue);
         console.log(parsedInt);
